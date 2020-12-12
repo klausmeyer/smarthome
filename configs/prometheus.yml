@@ -10,8 +10,8 @@ scrape_configs:
 
   - job_name: wttr_in_mering
     scrape_interval: 15m
+    metrics_path: '/Mering'
+    params:
+      format: ['p1']
     static_configs:
       - targets: ['wttr.in']
-        metrics_path: '/Mering'
-        params:
-          format: ['p1']
