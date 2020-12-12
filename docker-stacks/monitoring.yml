@@ -5,7 +5,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.23.0
     configs:
-      - source: prometheus_config_2020-12-12_14-20-00
+      - source: prometheus_config_2020-12-12_15-18-00
         target: /etc/prometheus/prometheus.yml
         uid: '472'
         gid: '472'
@@ -27,7 +27,7 @@ services:
       - '3000:3000'
 
 configs:
-  prometheus_config_2020-12-12_14-20-00:
+  prometheus_config_2020-12-12_15-18-00:
     file: ../configs/prometheus.yml
   grafana_config_2020-12-12_13-25-00:
     file: ../configs/grafana.ini
