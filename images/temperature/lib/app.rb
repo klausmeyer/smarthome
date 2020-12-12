@@ -14,5 +14,8 @@ class App < Rack::App
         %Q(temperature_#{actor.type}_set{actor="#{name}"} #{actor.hkr_temp_set})
       ]
     end.flatten.join("\n")
+  rescue => e
+    Rollbar.error(e)
+    raise
   end
 end

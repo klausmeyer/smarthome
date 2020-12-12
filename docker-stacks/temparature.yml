@@ -4,3 +4,13 @@ services:
 
   temperature:
     image: 127.0.0.1:5000/smarthome/temperature:latest
+    environment:
+      ROLLBAR_ENABLED: 'true'
+      ROLLBAR_TOKEN_FILE: '/run/secrets/smarthome_rollbar_key'
+    secrets:
+      - 'smarthome_rollbar_key'
+
+secrets:
+
+  smarthome_rollbar_key:
+    external: true
