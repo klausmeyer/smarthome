@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+
+  temperature:
+    image: 127.0.0.1:5000/smarthome/temperature:latest

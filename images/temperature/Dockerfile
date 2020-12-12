@@ -1,0 +1,21 @@
+FROM ruby:2.7.2-alpine
+
+LABEL maintainer="Klaus Meyer <spam@klaus-meyer.net>"
+
+ENV PORT 8080
+EXPOSE $PORT
+
+RUN apk update \
+ && apk add build-base zlib-dev tzdata nodejs openssl-dev \
+ && rm -rf /var/cache/apk/* \
+ && addgroup -S app && adduser -S app -G app -h /app \
+ && chown -R app.app /app \
+ && chown -R app.app /usr/local/bundle
+
+WORKDIR /app
+ADD . .
+
+USER app
+RUN bundle install
+
+CMD puma -p $PORT

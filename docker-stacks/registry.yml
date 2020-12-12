@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+
+  registry:
+    image: registry:2.7.1
+    volumes:
+      - 'registry_data:/var/lib/registry'
+    ports:
+      - '5000:5000'
+
+volumes:
+
+  registry_data:

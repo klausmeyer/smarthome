@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  prometheus:
+    image: prom/prometheus:v2.23.0
+    configs:
+      - source: prometheus_config_2020-12-12_14-20-00
+        target: /etc/prometheus/prometheus.yml
+        uid: '472'
+        gid: '472'
+    volumes:
+      - 'prometheus_data:/prometheus'
+    ports:
+      - '9090:9090'
+
+  grafana:
+    image: grafana/grafana:7.3.5
+    configs:
+      - source: grafana_config_2020-12-12_13-25-00
+        target: /etc/grafana/grafana.ini
+        uid: '472'
+        gid: '0'
+    volumes:
+      - 'grafana_data:/var/lib/grafana'
+    ports:
+      - '3000:3000'
+
+configs:
+  prometheus_config_2020-12-12_14-20-00:
+    file: ../configs/prometheus.yml
+  grafana_config_2020-12-12_13-25-00:
+    file: ../configs/grafana.ini
+
+volumes:
+
+  prometheus_data:
+  grafana_data:
