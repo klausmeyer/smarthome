@@ -7,3 +7,11 @@ scrape_configs:
     scrape_interval: 5m
     static_configs:
       - targets: ['temperature:8080']
+
+  - job_name: wttr_in_mering
+    scrape_interval: 15m
+    static_configs:
+      - targets: ['wttr.in']
+        metrics_path: '/Mering'
+        params:
+          format: ['p1']
