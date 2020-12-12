@@ -7,13 +7,14 @@ EXPOSE $PORT
 
 RUN apk update \
  && apk add build-base zlib-dev tzdata nodejs openssl-dev \
- && rm -rf /var/cache/apk/* \
- && addgroup -S app && adduser -S app -G app -h /app \
- && chown -R app.app /app \
- && chown -R app.app /usr/local/bundle
+ && rm -rf /var/cache/apk/*
 
 WORKDIR /app
 ADD . .
+
+RUN addgroup -S app && adduser -S app -G app -h /app \
+ && chown -R app.app /app \
+ && chown -R app.app /usr/local/bundle
 
 USER app
 RUN gem install bundler -v 2.2.0 && bundle install
