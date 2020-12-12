@@ -5,7 +5,7 @@ class App < Rack::App
   end
 
   get '/metrics' do
-    actors = Fritzbox::Smarthome::Actor.all rescue []
+    actors = Fritzbox::Smarthome::Actor.all
 
     actors.map do |actor|
       name = actor.name.tr('"', '')
