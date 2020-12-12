@@ -16,6 +16,6 @@ WORKDIR /app
 ADD . .
 
 USER app
-RUN bundle install
+RUN gem install bundler -v 2.2.0 && bundle install
 
 CMD puma -p $PORT
