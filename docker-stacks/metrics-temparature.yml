@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
 
-  temperature:
-    image: 127.0.0.1:5000/smarthome/temperature:latest
+  metrics_temperature:
+    image: 127.0.0.1:5000/smarthome/metrics-temperature:latest
     environment:
       ROLLBAR_ENABLED: 'true'
       ROLLBAR_TOKEN_FILE: '/run/secrets/smarthome_rollbar_key'
