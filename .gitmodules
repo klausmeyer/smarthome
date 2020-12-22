@@ -1,0 +1,6 @@
+[submodule "images/metrics-temperature"]
+	path = images/metrics-temperature
+	url = git@github.com:klausmeyer/smarthome-metrics-temperature.git
+[submodule "images/bridge"]
+	path = images/bridge
+	url = git@github.com:klausmeyer/smarthome-bridge.git
