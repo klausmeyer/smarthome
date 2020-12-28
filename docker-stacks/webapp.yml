@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+
+  webapp:
+    image: 127.0.0.1:5000/smarthome/webapp:latest
+    ports:
+      - '4000:8080'

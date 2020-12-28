@@ -11,6 +11,15 @@ services:
     ports:
       - '5000:5000'
 
+  registry_browser:
+    image: 127.0.0.1:5000/smarthome/registry-browser:latest
+    environment:
+      DOCKER_REGISTRY_URL: 'http://registry:5000'
+      ENABLE_DELETE_IMAGES: 'true'
+      PUBLIC_REGISTRY_URL: 'navi.fritz.box:5000'
+    ports:
+      - '5001:8080'
+
 volumes:
 
   registry_data:
