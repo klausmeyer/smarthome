@@ -4,3 +4,9 @@
 [submodule "images/bridge"]
 	path = images/bridge
 	url = git@github.com:klausmeyer/smarthome-bridge.git
+[submodule "images/registry-browser"]
+	path = images/registry-browser
+	url = git@github.com:klausmeyer/docker-registry-browser.git
+[submodule "images/webapp"]
+	path = images/webapp
+	url = git@github.com:klausmeyer/fritzbox-smarthome-webapp.git
